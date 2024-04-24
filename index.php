@@ -1,5 +1,5 @@
 <?php require "includes/header.php"; ?>
 
-hello 
+hello from index
 
 <?php require "includes/footer.php"; ?>
