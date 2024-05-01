@@ -19,9 +19,10 @@ if(isset($_SESSION['username'])){
     header("location: index.php");
 }
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submit'])) {
     if($_POST['email'] == '' OR $_POST['password'] == ''){
        echo "some inputs are empty"; 
+
     }else {
 
       $email = $_POST['email'];
@@ -32,6 +33,9 @@ if(isset($_POST['submit'])){
       $login->execute();
 
       $data = $login->fetch(PDO::FETCH_ASSOC);
+
+      echo $login -> rowCount();
+
 
       if($login->rowCount() > 0) {
 
@@ -68,7 +72,8 @@ if(isset($_POST['submit'])){
     <label for="floatingPassword">Password</label>
 </div>
 <button name="submit" class="w-100 btn-lg btn-primary" type="submit">Sign in</button>
-<h6 class="mt-3">Don't have an account <a href="register.php">Create your account</a></h6>
+<h6 class="mt-3">Don't have an account 
+  <a href="register.php">Create your account</a></h6>
 </form>
 </main>
 <?php require "includes/footer.php"; ?>
