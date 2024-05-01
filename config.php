@@ -5,7 +5,7 @@ $host = "localhost";
 
 
 //dbname
-$dbname = "auth-sys";
+$dbname = "auth-syst";
 
 //user
 $user = "root";
@@ -15,5 +15,10 @@ $pass = "";
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;", $user,  $pass); 
 
+// if($conn == true) {
+//     echo "its working fine";
+// } else {
+//     echo "connection is wrong: err ";
+// }
 
 ?>
